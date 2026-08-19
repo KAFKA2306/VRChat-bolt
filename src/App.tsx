@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, BookOpen, Star, Users } from 'lucide-react';
+import { useState } from 'react';
+import { Search, BookOpen } from 'lucide-react';
 import WorldGrid from './components/WorldGrid';
 import type { World } from './types/world';
 
@@ -24,9 +24,6 @@ const SAMPLE_WORLDS: World[] = [
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
-  const [minRating, setMinRating] = useState(3);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">

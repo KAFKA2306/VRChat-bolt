@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "rm -rf .test-dist && tsc tests/filterWorlds.test.ts src/lib/filterWorlds.ts src/types/world.ts --outDir .test-dist --rootDir . --module ES2020 --target ES2020 --moduleResolution bundler --skipLibCheck && node .test-dist/tests/filterWorlds.test.js",
     "preview": "vite preview"
   },
   "dependencies": {

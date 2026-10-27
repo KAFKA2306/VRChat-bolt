@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Search, BookOpen } from 'lucide-react';
 import WorldGrid from './components/WorldGrid';
+import { filterWorlds } from './lib/filterWorlds';
 import type { World } from './types/world';
 
 const SAMPLE_WORLDS: World[] = [
@@ -24,6 +25,7 @@ const SAMPLE_WORLDS: World[] = [
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
+  const filteredWorlds = filterWorlds(SAMPLE_WORLDS, searchQuery);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
@@ -62,7 +64,7 @@ function App() {
           </div>
         </div>
 
-        <WorldGrid worlds={SAMPLE_WORLDS} />
+        <WorldGrid worlds={filteredWorlds} />
       </main>
     </div>
   );
